@@ -7,10 +7,13 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
-    <p>レイアウトだよ</p>
+    <header>
+      <p class="header_pageTitle">新着記事</p>
+    </header>
     <%= yield %>
   </body>
 </html>
