@@ -11,8 +11,15 @@
   </head>
 
   <body>
-    <header>
+    <header class="header">
       <p class="header_pageTitle">新着記事</p>
+      <div class="dropdown">
+        <%= image_tag 'default-avatar.png', class: 'header_avatar dorpbtn' %>
+        <div class="dropdown-content">
+          <a href="#">プロフィール</a>
+          <a href="#">ログアウト</a>
+        </div>
+      </div>
     </header>
     <%= yield %>
   </body>
