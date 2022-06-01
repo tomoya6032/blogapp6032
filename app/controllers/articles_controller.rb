@@ -16,12 +16,13 @@ class ArticlesController < ApplicationController
       if @article.save
         redirect_to article_path(@article), notice: '保存ができたよ'
       else
+        flash.now[:error] ='保存に失敗しました'
         render :new
       end
     end
 
     private
     def article_params
-      params.require(:article).permit(:title, :contemt)
+      params.require(:article).permit(:title, :content)
     end
 end
