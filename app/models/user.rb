@@ -23,7 +23,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :articles, dependent: :destroy
+
+  has_many :liks,dependent: :destroy
+  has_many :profile,dependent: :destroy
+
   has_one :profile, dependent: :destroy
+
 
   delegate :birthday, :age, :gender, to: :profile, allow_nil: true
 
@@ -39,6 +44,12 @@ class User < ApplicationRecord
     profile || build_profile
   end
 
+
+  def prepare_profile
+   profile || bulid_profile
+  end
+
+
   def avatar_image
     if profile&.avatar&.attached?
       profile.avatar
@@ -46,4 +57,5 @@ class User < ApplicationRecord
       'default-avatar.png'
     end
   end
+
 end
