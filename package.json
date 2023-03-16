@@ -1,15 +1,26 @@
 {
   "name": "blog_app",
   "private": true,
+  "engines": {
+    "node": "14.17.0"
+  },
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.3",
+    "jquery": "^3.6.4",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@webpack-cli/serve": "^2.0.1",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.9.2"
+  },
+  "resolutions": {
+    "glob-parent": "^5.1.2",
+    "nth-check": "^2.0.1"
   }
 }

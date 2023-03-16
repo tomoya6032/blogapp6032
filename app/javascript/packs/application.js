@@ -15,3 +15,23 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+require("trix")
+require("@rails/actiontext")
+
+import $ from 'jquery'
+import axios from 'axios'
+import 'trix/dist/trix.css'
+
+
+// document.addEventListener('turbolinks:load', () => {
+//     $('.board_title').on('click', () => {
+//       axios.get('/')
+//         .then((response) => {
+//             console.log(response)
+//         })
+//     })
+// })
+document.addEventListener('DOMContentLoaded', () => {
+    window.alert('DOM LOADED')
+})
