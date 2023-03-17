@@ -35,3 +35,8 @@ import 'trix/dist/trix.css'
 document.addEventListener('DOMContentLoaded', () => {
     window.alert('DOM LOADED')
 })
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded');
+    window.alert('DOM LOADED');
+  })
