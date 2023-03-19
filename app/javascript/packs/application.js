@@ -24,19 +24,30 @@ import axios from 'axios'
 import 'trix/dist/trix.css'
 
 
+// document.addEventListener('DOMContentLoaded', () => {
+//     window.alert('DOM LOADED')
+//     console.log ('aaaaaaa')
+// })
+
+
 // document.addEventListener('turbolinks:load', () => {
-//     $('.board_title').on('click', () => {
+//     $('.article_title').on('click', () => {
 //       axios.get('/')
 //         .then((response) => {
 //             console.log(response)
 //         })
 //     })
 // })
-document.addEventListener('DOMContentLoaded', () => {
-    window.alert('DOM LOADED')
-})
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM loaded');
-    window.alert('DOM LOADED');
-  })
+    $('.article_title').on('click', () => {
+      window.alert('CLIKED')
+    })
+})
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     console.log('DOM loaded');
+//     window.alert('DOM LOADED');
+// })
+
