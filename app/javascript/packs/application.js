@@ -30,20 +30,20 @@ import 'trix/dist/trix.css'
 // })
 
 
-// document.addEventListener('turbolinks:load', () => {
-//     $('.article_title').on('click', () => {
-//       axios.get('/')
-//         .then((response) => {
-//             console.log(response)
-//         })
-//     })
-// })
-
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
     $('.article_title').on('click', () => {
-      window.alert('CLIKED')
+      axios.get('/')
+        .then((response) => {
+            console.log(response)
+        })
     })
 })
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     $('.article_title').on('click', () => {
+//       window.alert('CLIKED')
+//     })
+// })
 
 
 // document.addEventListener('DOMContentLoaded', () => {
