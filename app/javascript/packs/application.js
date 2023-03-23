@@ -22,24 +22,24 @@ require("@rails/actiontext")
 import $ from 'jquery'
 import axios from 'axios'
 import 'trix/dist/trix.css'
-import { response } from '../../../.yarn/releases/yarn-1.22.10.cjs'
+import { csrfToken } from 'rails-ujs'
+
+axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 
 
-
-
-// document.addEventListener('turbolinks:load', () => {
-//     const dataset = document.getElementById('article-show').dataset;
-//     const articleId = dataset.articleId;
-//     axios.get(`/articles/${articleId}/like`)
-//       .then((response) => {
-//          const hasLiked = response.data.hasLiked
-//          if (hasLiked) {
-//            $('.active-heart').removeClass('hidden')
-//          } else {
-//            $('.inactive-heart').removeClass('hidden')
-//          }
-//       })
-//  })
+document.addEventListener('turbolinks:load', () => {
+    const dataset = document.getElementById('article-show').dataset;
+    const articleId = dataset.articleId;
+    axios.get(`/articles/${articleId}/like`)
+      .then((response) => {
+         const hasLiked = response.data.hasLiked
+         if (hasLiked) {
+           $('.active-heart').removeClass('hidden')
+         } else {
+           $('.inactive-heart').removeClass('hidden')
+         }
+      })
+ })
 
 const handleHeartDisplay = (hasLiked) => {
     if (hasLiked) {
@@ -51,13 +51,13 @@ const handleHeartDisplay = (hasLiked) => {
 
 document.addEventListener('turbolinks:load', () => {
     const dataset = document.getElementById('article-show').dataset;
-    const articleId = dataset.articleId;
+    const articleId = dataset.articleId
 
     axios.get(`/articles/${articleId}/like`)
       .then((response) => {
          const hasLiked = response.data.hasLiked
          handleHeartDisplay(hasLiked)
-      })
+    })
 
     $('.inactive-heart').on('click', () => {
       axios.post(`/articles/${articleId}/like`)
@@ -69,5 +69,17 @@ document.addEventListener('turbolinks:load', () => {
           console.log(e)
         })
     })   
+
+    $('.active-heart').on('click', () => {
+        axios.delete(`/articles/${articleId}/like`)
+          .then((response) => {
+            console.log(response)
+          })
+          .catch((e) => {
+            window.alert('Error')
+            console.log(e)
+          })
+      })   
+
  })
 
